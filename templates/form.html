@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Risk Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secstyle.css">
+
+    <style>
+        /* Existing styles */
+    
+        /* Loading bar styles */
+        #loadingBar {
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            height: 50px;
+            background-color: #f3f3f3;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+    
+        #loadingBar .progress {
+            height: 100%;
+            width: 0;
+            background-color: #28a745;
+            transition: width 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loadingBar">
+        <div class="progress" id="progressBar"></div>
+    </div>
+
+    <nav class="navbar">
+        <h1>Heart Disease Risk Prediction</h1>
+    </nav>
+
+    <div class="form-container">
+        <form id="heart-disease-form">
+            <div class="form-content">
+                <div class="form-section">
+                    <label for="age">Age:</label>
+                    <input type="text" id="age" name="age">
+                    <label for="gender">Gender (0 or 1):</label>
+                    <input type="text" id="gender" name="gender">
+                    <label for="chestPainType">Chest Pain Type (0-3):</label>
+                    <input type="text" id="chestPainType" name="chestPainType">
+                    <label for="bloodPressure">Resting Blood Pressure:</label>
+                    <input type="text" id="bloodPressure" name="bloodPressure">
+                    <label for="cholesterol">Cholesterol:</label>
+                    <input type="text" id="cholesterol" name="cholesterol">
+                    <label for="fbs">FBS (0-1):</label>
+                    <input type="text" id="fbs" name="fbs">
+                </div>
+
+                <div class="form-section">
+                    <label for="restecg">RestECG (0-2):</label>
+                    <input type="text" id="restecg" name="restecg">
+                    <label for="thalach">Thalach:</label>
+                    <input type="text" id="thalach" name="thalach">
+                    <label for="exang">Exang (0-1):</label>
+                    <input type="text" id="exang" name="exang">
+                    <label for="oldpeak">OldPeak:</label>
+                    <input type="text" id="oldpeak" name="oldpeak">
+                    <label for="slope">Slope (0-2):</label>
+                    <input type="text" id="slope" name="slope">
+                    <label for="ca">CA (0-3):</label>
+                    <input type="text" id="ca" name="ca">
+                    <label for="thal">Thal (0-3):</label>
+                    <input type="text" id="thal" name="thal">
+                </div>
+            </div>
+
+            <div class="submit-container">
+                <button type="button" class="submit-btn" onclick="handleSubmit()">
+                    Predict Risk
+                </button>
+            </div>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

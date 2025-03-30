@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load the pre-trained VotingClassifier (ensemble model)
-voting_clf = joblib.load('C:\\Users\\drv\\drv_codes\\ML project\\models\\ensemble.pkl')
+voting_clf = joblib.load('./models/ensemble.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():

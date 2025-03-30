@@ -34,11 +34,11 @@ app = Flask(__name__)
 # Enable CORS only for the '/predict' route
 CORS(app, resources={r"/predict": {"origins": "*"}})
 
-# Resolve the model path dynamically
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "ensemble.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Get the directory of app.py
+MODEL_PATH = os.path.join(BASE_DIR, "../models/ensemble.pkl")
 
 try:
-    voting_clf = joblib.load('../models/ensemble.pkl')
+    voting_clf = joblib.load(MODEL_PATH)
 except FileNotFoundError:
     print(f"Error: Model file not found at {MODEL_PATH}")
     voting_clf = None  # Set to None to avoid crashes

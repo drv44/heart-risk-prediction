@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from sklearn.neighbors import KNeighborsClassifier
 
 # Load the dataset (e.g., UCI Heart Disease Dataset)
-data = pd.read_csv('C:/Users/drv/drv_codes/ML project/dataset/heart.csv')
+data = pd.read_csv('./dataset/heart.csv')
 
 # Check for missing values and handle them
 imputer = SimpleImputer(strategy="mean")
@@ -53,5 +53,5 @@ print(f"F1 Score: {f1}")
 print(f"ROC-AUC: {roc_auc}")
 
 #save the model
-joblib.dump(knn_model, 'C:/Users/drv/drv_codes/ML project/models/knn.pkl')
+joblib.dump(knn_model, 'knn.pkl')
 

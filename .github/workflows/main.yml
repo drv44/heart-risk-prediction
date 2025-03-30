@@ -1,0 +1,41 @@
+yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r app/requirements.txt
+    - name: Build Docker image
+      run: |
+        docker build -t heart-attack-prediction .
+
+    - name: Run tests (you can add some later)
+      run: |
+        curl -X POST -H "Content-Type: application/json" -d '{"age": 50, "blood_pressure": 140, "cholesterol": 240}' http://localhost:5000/predict
+
+    - name: Push to Heroku (optional)
+      run: |
+        # Add Heroku deployment commands here
+        echo "Deploying to Heroku"
+

@@ -84,4 +84,4 @@ print(f"Precision: {precision}, Recall: {recall}, F1 Score: {f1}, ROC-AUC: {roc_
 # model.save('C:/Users/drv/Desktop/ML Project/heart_disease_predictor.h5')
 from tensorflow import keras
 #keras.saving.save_model(model, 'heart_disease_predictor.keras')
-model.save('nn.keras')
+model.save('./models/nn.keras')

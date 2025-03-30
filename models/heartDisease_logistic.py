@@ -53,4 +53,4 @@ print(f"F1 Score: {f1}")
 print(f"ROC-AUC: {roc_auc}")
 
 #save the model
-joblib.dump(log_reg_model, 'logistic.pkl')
+joblib.dump(log_reg_model, './models/logistic.pkl')

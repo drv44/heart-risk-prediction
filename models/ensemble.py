@@ -9,7 +9,7 @@ from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn.metrics import accuracy_score
 
 # Load dataset (replace with your actual data loading step)
-data = pd.read_csv('../dataset/heart.csv')
+data = pd.read_csv('./dataset/heart.csv')
 
 # Assuming your target variable is 'target' and features are the rest of the columns
 X = data.drop(columns='target')
@@ -25,10 +25,10 @@ X_test = scaler.transform(X_test)
 
 # Load models
 # nn_model = tf.keras.models.load_model('nn.keras')
-svm_model = joblib.load('svm.pkl')
-rf_model = joblib.load('randomForest.pkl')
-logistic_model = joblib.load('logistic.pkl')
-knn_model = joblib.load('knn.pkl')
+svm_model = joblib.load('./models/svm.pkl')
+rf_model = joblib.load('./models/randomForest.pkl')
+logistic_model = joblib.load('./models/logistic.pkl')
+knn_model = joblib.load('./models/knn.pkl')
 
 # # Helper function to get probabilities from the neural network model
 # def nn_predict_proba(model, X):
@@ -75,4 +75,4 @@ y_pred = voting_clf.predict(X_test)
 print("Voting Classifier Accuracy:", accuracy_score(y_test, y_pred))
 
 #save the model
-joblib.dump(voting_clf, 'ensemble.pkl')
+joblib.dump(voting_clf, './models/ensemble.pkl')

@@ -53,5 +53,5 @@ print(f"F1 Score: {f1}")
 print(f"ROC-AUC: {roc_auc}")
 
 #save the model
-joblib.dump(knn_model, 'knn.pkl')
+joblib.dump(knn_model, './models/knn.pkl')
 

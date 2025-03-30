@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: flask-frontend-backend
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app/app.py"
+    envVars:
+      - key: PORT
+        value: 5000

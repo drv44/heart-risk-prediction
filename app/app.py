@@ -38,7 +38,7 @@ CORS(app, resources={r"/predict": {"origins": "*"}})
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "models", "ensemble.pkl")
 
 try:
-    voting_clf = joblib.load(MODEL_PATH)
+    voting_clf = joblib.load('../models/ensemble.pkl')
 except FileNotFoundError:
     print(f"Error: Model file not found at {MODEL_PATH}")
     voting_clf = None  # Set to None to avoid crashes
